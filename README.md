@@ -1,0 +1,17 @@
+# IOCandBean
+IoC容器以及Servlet容器
+IoC：
+IoC容器是面相对象编程中的一种设计原则，意为控制反转，它将程序中创建对象的控制权交给了Spring框架来管理
+降低了计算机代码间的耦合度，他的实质就是获得依赖对象的过程被反转了。
+有两种实现方法----依赖注入和依赖查找。
+@Configuration：用于标注配置类，让spring来加载该配置类作为bean对象的载体。在运行时，将为这些bean生成BeanDefinition和服务请求
+@Bean:产生一个Bean，并交给Spring管理。目的是封装用户、数据库中的数据，一般有Setter和Getter方法
+在本实例里面，UserConfig被标记为了一个bean，名字为user1，该类使用了实体类User，利用Setter设置了各个属性的值。然后在测试类里面利用注解来实例化对象user
+
+
+Servlet：
+
+Servlet是在javax.servlet包里面定义的一个借口。在开发SpringBoot应用程序的，除了使用Controller以外还需要用到Servlet实现像拦截器和监听器这样的功能
+编写ServletDemo的时候，新建一个Servlet类继承httpservlet然后重写HttpServlet的doGet方法
+在运行时，需要在启动类里面加入@ServletComponentScan来使Servlet生效。。
+在Servlet类上方的注解@WebServlet中的参数urlpatterns=“”，在“”内指定WebServlet的作用范围
